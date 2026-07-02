@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Chapter I — Where Every Flower Waited For You</title>
+<meta name="description" content="A quiet, handcrafted world, waiting for you." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Caveat:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+  <!-- ================= LOADING ================= -->
+  <div id="loading-screen">
+    <div class="loading-mark">
+      <span class="loading-petal"></span>
+      <span class="loading-petal"></span>
+      <span class="loading-petal"></span>
+      <span class="loading-petal"></span>
+    </div>
+    <p class="loading-text">gathering the light&hellip;</p>
+  </div>
+
+  <!-- ================= INTRO ================= -->
+  <div id="intro-overlay">
+    <canvas id="stars-canvas"></canvas>
+    <div class="intro-copy">
+      <p class="intro-line" data-line="1">Every beautiful journey begins somewhere.</p>
+      <p class="intro-line" data-line="2">This one begins with you.</p>
+    </div>
+    <button id="enter-btn" class="enter-btn" aria-label="Enter the experience">
+      <span>step inside</span>
+    </button>
+  </div>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <canvas id="webgl"></canvas>
+
+  <div id="hint-bar" class="hint-bar" aria-hidden="true">
+    <span class="hint-dot"></span>
+    <span class="hint-text">follow the golden wings &middot; touch a glowing flower</span>
+  </div>
+
+  <div id="flower-counter" class="flower-counter" aria-hidden="true">
+    <span id="flower-count-num">0</span><span class="flower-count-total">/20 found</span>
+  </div>
+
+  <!-- ================= LETTER MODAL ================= -->
+  <div id="letter-modal" class="letter-modal" aria-hidden="true">
+    <div class="letter-backdrop"></div>
+    <div class="letter-petal-frame">
+      <span class="frame-petal p1"></span>
+      <span class="frame-petal p2"></span>
+      <span class="frame-petal p3"></span>
+      <span class="frame-petal p4"></span>
+      <span class="frame-petal p5"></span>
+      <span class="frame-petal p6"></span>
+    </div>
+    <article class="letter-card" role="dialog" aria-modal="true" aria-labelledby="letter-body">
+      <p class="letter-mark">a flower remembered something</p>
+      <p id="letter-body" class="letter-body"></p>
+      <p class="letter-sign">— Kajal</p>
+      <button id="letter-close" class="letter-close" aria-label="Close letter">close</button>
+    </article>
+  </div>
+
+  <!-- ================= ENDING ================= -->
+  <div id="ending-overlay" class="ending-overlay" aria-hidden="true">
+    <p class="ending-line" data-line="1">Every flower carried one quiet wish&hellip;</p>
+    <p class="ending-line" data-line="2">Mine was always your happiness.</p>
+    <div class="portal-wrap">
+      <div class="portal-ring"></div>
+      <p class="portal-chapter">Chapter II</p>
+      <p class="portal-title">When The Stars Learned Your Name</p>
+    </div>
+  </div>
+
+  <div id="fade-to-black" class="fade-to-black" aria-hidden="true"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
